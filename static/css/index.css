@@ -2,6 +2,35 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.results-small {
+  overflow: hidden;
+  /* height: 400px; */
+  /* height: 100%; */
+}
+
+.results-small .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.pd-image {
+  margin-top: 20px;
+}
+
+.results-small .desc {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 14px;
+  padding: 3px 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 128;
+}
 
 .footer .icon-link {
     font-size: 25px;
@@ -17,6 +46,35 @@ body {
   font-variant: small-caps;
 }
 
+.video {
+  position: relative;
+  width: 100%;
+}
+
+.video img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.spacer {
+  height: 50px; /* Spacer block to add custom space between sections */
+}
+
+/* Description overlay inside the GIF at the bottom */
+.desc {
+  position: absolute;
+  bottom: 0; /* Positions the text at the bottom of the GIF */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Translucent black background */
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 100; /* Ensures text is on top of the GIF */
+}
 
 .teaser .hero-body {
   padding-top: 0;

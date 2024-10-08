@@ -24,8 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>VideoGuide: Improving Video Diffusion Models without Training Through a Teacher's Guide</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,6 +42,118 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <!-- custom css file  -->
+  <link rel="stylesheet" href="./static/css/twentytwenty.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .custom-slider-container {
+        width: 100%;
+        max-width: 900px; /* 슬라이더의 최대 너비 */
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .custom-slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .custom-slide {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-gif-wrapper {
+        display: flex;
+        justify-content: center; /* Horizontally centers the content */
+        align-items: center;     /* Vertically centers the content */
+        width: 100%;
+        height: 100%;            /* Ensures the height of the container is considered */
+    }
+
+    .custom-gif-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Vertically centers the video within the container */
+        align-items: center;     /* Horizontally centers the video within the container */
+        width: 30%;              /* Keeps the same width as before for each video container */
+        height: 100%;            /* Ensures the height of the container is used */
+    }
+
+
+    .custom-gif-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .custom-caption {
+        text-align: center;
+        margin-top: 5px;
+        font-weight: bold; /* Makes the caption bold */
+        font-size: 18px; /* Increases the font size (adjust as needed) */
+    }
+
+    .custom-top-caption {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* 좌우 화살표 */
+    .custom-arrow {
+      position: absolute;
+      top: 47%; /* Vertically centers the arrows */
+      transform: translateY(-50%); /* Centers vertically */
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 20px;
+      padding: 12px;
+      cursor: pointer;
+      z-index: 10; /* Ensure the arrows are above the videos */
+    }
+
+    .text-with-margin {
+      margin-top: 10px; /* Adds 20px space above the text */
+      margin-bottom: 50px;
+    }
+
+    .custom-prev {
+        left: -5px; /* Positions the left arrow slightly outside the video container */
+    }
+
+    .custom-next {
+        right: -5px; /* Positions the right arrow slightly outside the video container */
+    }
+
+    /* GIF들 간의 간격 */
+    .custom-gif-container:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .dots-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+  </style>
 </head>
 <body>
 
@@ -52,68 +163,31 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">VideoGuide: Improving Video Diffusion Models without Training Through a Teacher's Guide</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://arxiv.org/abs/2410.04364" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    </ARXIV>
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                  </span>
+              
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/DoHunLee1/VideoGuide" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    </a>
                   </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
             </div>
           </div>
         </div>
@@ -123,22 +197,81 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
+<!-- Hero Teaser -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+      <div id="results-small" class="carousel results-small">
+
+        <div class="item">
+          <div class="twentytwenty-container main-container" data-orientation="horizontal" ratio="0.5556">
+            <!-- <div class="desc">ModelScope+FreeInit</div> -->
+            <!-- <div class="twentytwenty-container" data-orientation="horizontal"> -->
+              <img src="./static/images/main/4_1.gif" width="100%" />
+              <img src="./static/images/main/4_2.gif" width="100%" />
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container main-container" data-orientation="horizontal" ratio="0.5556">
+            <!-- <div class="desc">AnimateDiff+FreeInit</div> -->
+            <!-- <div class="twentytwenty-container" data-orientation="horizontal"> -->
+              <img src="./static/images/main/1_1.gif" width="100%" />
+              <img src="./static/images/main/1_2.gif" width="100%" />
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container main-container" data-orientation="horizontal" ratio="0.5556">
+            <!-- <div class="desc">AnimateDiff+FreeInit</div> -->
+            <!-- <div class="twentytwenty-container" data-orientation="horizontal"> -->
+              <img src="./static/images/main/2_1.gif" width="100%" />
+              <img src="./static/images/main/2_2.gif" width="100%" />
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container main-container" data-orientation="horizontal" ratio="0.5556">
+            <!-- <div class="desc">AnimateDiff+FreeInit</div> -->
+            <!-- <div class="twentytwenty-container" data-orientation="horizontal"> -->
+              <img src="./static/images/main/3_1.gif" width="100%" />
+              <img src="./static/images/main/3_2.gif" width="100%" />
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="twentytwenty-container main-container" data-orientation="horizontal" ratio="0.5556">
+            <!-- <div class="desc">AnimateDiff+FreeInit</div> -->
+            <!-- <div class="twentytwenty-container" data-orientation="horizontal"> -->
+              <img src="./static/images/main/5_1.gif" width="100%" />
+              <img src="./static/images/main/5_2.gif" width="100%" />
+            <!-- </div> -->
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container main-container" data-orientation="horizontal" ratio="0.5556">
+            <!-- <div class="desc">ModelScope+FreeInit</div> -->
+            <!-- <div class="twentytwenty-container" data-orientation="horizontal"> -->
+              <img src="./static/images/main/6_1.gif" width="100%" />
+              <img src="./static/images/main/6_2.gif" width="100%" />
+            <!-- </div> -->
+          </div>
+        </div>
+
+
+      </div>
   </div>
+  <div class="spacer"></div>
 </section>
-<!-- End teaser video -->
+
+<!-- End Teaser Video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -147,141 +280,643 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          <p style="font-size:18px;">
+            Text-to-image (T2I) diffusion models have revolutionized visual content creation, but extending these capabilities to text-to-video (T2V) generation remains a challenge, particularly in preserving temporal consistency. Existing methods that aim to improve consistency often cause trade-offs such as reduced imaging quality and impractical computational time. To address these issues we introduce VideoGuide, a novel framework that enhances the temporal consistency of pretrained T2V models without the need for additional training or fine-tuning. Instead, VideoGuide leverages any pretrained video diffusion model (VDM) or itself as a guide during the early stages of inference, improving temporal quality by interpolating the guiding model’s denoised samples into the sampling model's denoising process. The proposed method brings about significant improvement in temporal consistency and image fidelity, providing a cost-effective and practical solution that synergizes the strengths of various video diffusion models. Furthermore, we demonstrate prior distillation, revealing that base models can achieve enhanced text coherence by utilizing the superior data prior of the guiding model through the proposed method.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Method -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-sixths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/fig_pipeline.jpg" alt="fig_pipeline"/>
+          <p style=" font-size:18px; margin-top:30px;">
+            VideoGuide enhances temporal quality in video diffusion models without additional training 
+            or fine-tuning by leveraging a pretrained model as a guide. During inference, it uses a 
+            teacher model to provide a temporally consistent sample, which is interpolated with 
+            the student model's output to improve consistency. This process is applied only in the early 
+            steps of inference and includes a low-pass filter to refine high-frequency details. 
+            VideoGuide effectively improves temporal consistency while preserving imaging quality and motion smoothness.
           </p>
+      
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+<!-- End Method -->
 
 
 
 
 <!-- Youtube video -->
 <section class="hero is-small is-light">
+  
   <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <!-- <div class="container"> -->
+    <div class="container is-max-desktop"  style="margin-top:30px;">
+      <div class="section-title has-text-centered">
+        <h2 class="title is-3">Experimental Results</h2>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="section-title has-text-centered">
+        <h2 class="title is-4">1. Comparison with Previous work</h2>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="custom-slider-container">
+        <div class="custom-slider" id="custom-slider">
+            <!-- 첫 번째 세트 -->
+            <div class="custom-slide">
+                <div class="custom-top-caption">"A drone view of celebration with Christmas tree and fireworks."</div> <!-- Top caption added -->
+                <div class="custom-gif-wrapper">
+                    <div class="custom-gif-container">
+                        <img src="./static/images/comp/1_1.gif" alt="GIF 1">
+                        <div class="custom-caption">Base</div>
+                    </div>
+                    <div class="custom-gif-container">
+                        <img src="./static/images/comp/1_2.gif" alt="GIF 2">
+                        <div class="custom-caption">FreeInit</div>
+                    </div>
+                    <div class="custom-gif-container">
+                        <img src="./static/images/comp/1_3.gif" alt="GIF 3">
+                        <div class="custom-caption">Ours</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 두 번째 세트 -->
+            <div class="custom-slide">
+                <div class="custom-top-caption">"A cat wearing sunglasses and working as a lifeguard at a pool."</div> <!-- Top caption added -->
+                <div class="custom-gif-wrapper">
+                    <div class="custom-gif-container">
+                        <img src="./static/images/comp/2_1.gif" alt="GIF 4">
+                        <div class="custom-caption">Base</div>
+                    </div>
+                    <div class="custom-gif-container">
+                        <img src="./static/images/comp/2_2.gif" alt="GIF 5">
+                        <div class="custom-caption">FreeInit</div>
+                    </div>
+                    <div class="custom-gif-container">
+                        <img src="./static/images/comp/2_3.gif" alt="GIF 6">
+                        <div class="custom-caption">Ours</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-slide">
+              <div class="custom-top-caption">"Ashtray full of butts on table, smoke flowing on black background, close-up."</div> <!-- Top caption added -->
+              <div class="custom-gif-wrapper">
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/3_1.gif" alt="GIF 4">
+                      <div class="custom-caption">Base</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/3_2.gif" alt="GIF 5">
+                      <div class="custom-caption">FreeInit</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/3_3.gif" alt="GIF 6">
+                      <div class="custom-caption">Ours</div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="custom-slide">
+              <div class="custom-top-caption">"A car accelerating to gain speed."</div> <!-- Top caption added -->
+              <div class="custom-gif-wrapper">
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/4_1.gif" alt="GIF 4">
+                      <div class="custom-caption">Base</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/4_2.gif" alt="GIF 5">
+                      <div class="custom-caption">FreeInit</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/4_3.gif" alt="GIF 6">
+                      <div class="custom-caption">Ours</div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="custom-slide">
+              <div class="custom-top-caption">"A horse bending down to drink water from a river."</div> <!-- Top caption added -->
+              <div class="custom-gif-wrapper">
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/5_1.gif" alt="GIF 4">
+                      <div class="custom-caption">Base</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/5_2.gif" alt="GIF 5">
+                      <div class="custom-caption">FreeInit</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/5_3.gif" alt="GIF 6">
+                      <div class="custom-caption">Ours</div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="custom-slide">
+              <div class="custom-top-caption">"A space shuttle launching into orbit, with flames and smoke billowing out from the engines."</div> <!-- Top caption added -->
+              <div class="custom-gif-wrapper">
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/6_1.gif" alt="GIF 4">
+                      <div class="custom-caption">Base</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/6_2.gif" alt="GIF 5">
+                      <div class="custom-caption">FreeInit</div>
+                  </div>
+                  <div class="custom-gif-container">
+                      <img src="./static/images/comp/6_3.gif" alt="GIF 6">
+                      <div class="custom-caption">Ours</div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    
+        <!-- 좌우 화살표 -->
+        <button class="custom-arrow custom-prev" onclick="moveCustomSlide(-1)">&#10094;</button>
+        <button class="custom-arrow custom-next" onclick="moveCustomSlide(1)">&#10095;</button>
+
+        <div class="dots-container">
+          <span class="dot" onclick="setCurrentSlide(0)"></span>
+          <span class="dot" onclick="setCurrentSlide(1)"></span>
+          <span class="dot" onclick="setCurrentSlide(2)"></span>
+          <span class="dot" onclick="setCurrentSlide(3)"></span>
+          <span class="dot" onclick="setCurrentSlide(4)"></span>
+          <span class="dot" onclick="setCurrentSlide(5)"></span>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="section-title has-text-centered">
+        <h2 class="title is-4">2. AnimateDiff(RCNZcartoon) + VideoGuide</h2>
+      </div>
+
+      
+      <div id="results-carousel" class="carousel results-carousel">
+
+  
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">Goat standing over a rock</div>
+            <div class="video">
+              <img src="./static/images/rcnz/1_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/rcnz/1_2.gif" width="100%" />
+            </div>
+
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">Vertical video of camel roaming in the field during daytime.</div>
+            <div class="video">
+              <img src="./static/images/rcnz/2_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/rcnz/2_2.gif" width="100%" />
+            </div>
+          </div>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A girl in her tennis sportswear.</div>
+              <div class="video">
+                <img src="./static/images/rcnz/3_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rcnz/3_2.gif" width="100%" />
+              </div>
+            </div>
+          </div> 
         
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A white yacht traveling on a river and passing under the bridge.</div>
+              <div class="video">
+                <img src="./static/images/rcnz/4_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rcnz/4_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>   
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Gwen Stacy reading a book.</div>
+              <div class="video">
+                <img src="./static/images/rcnz/5_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rcnz/5_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">View through window in airplane.</div>
+              <div class="video">
+                <img src="./static/images/rcnz/6_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rcnz/6_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+      </div>
+
+      
+      <div class="spacer"></div>
+
+      <div class="section-title has-text-centered">
+        <h2 class="title is-4">3. AnimateDiff(ToonYou) + VideoGuide</h2>
+      </div>
+      
+      <div id="results-carousel" class="carousel results-carousel">
+
+  
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">Silhouette of the couple during sunset.</div>
+            <div class="video">
+              <img src="./static/images/toonyou/1_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/toonyou/1_2.gif" width="100%" />
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">Traffic in london street at night.</div>
+            <div class="video">
+              <img src="./static/images/toonyou/2_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/toonyou/2_2.gif" width="100%" />
+            </div>
+          </div>
+        </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Bonfire near river.</div>
+              <div class="video">
+                <img src="./static/images/toonyou/3_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/toonyou/3_2.gif" width="100%" />
+              </div>
+            </div>
+          </div> 
+        
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A footage of actor movie scene.</div>
+              <div class="video">
+                <img src="./static/images/toonyou/4_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/toonyou/4_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>   
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A woman getting out of the car to walk with their dog.</div>
+              <div class="video">
+                <img src="./static/images/toonyou/5_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/toonyou/5_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A cute pomeranian dog playing with a soccer ball.</div>
+              <div class="video">
+                <img src="./static/images/toonyou/6_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/toonyou/6_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="section-title has-text-centered">
+        <h2 class="title is-4">4. AnimateDiff(FilmVelvia) + VideoGuide</h2>
+      </div>
+      
+      <div id="results-carousel" class="carousel results-carousel">
+
+  
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">Grilling a steak on a pan grill.</div>
+            <div class="video">
+              <img src="./static/images/film/1_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/film/1_2.gif" width="100%" />
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">Dark clouds overshadowing the full moon.</div>
+            <div class="video">
+              <img src="./static/images/film/2_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/film/2_2.gif" width="100%" />
+            </div>
+          </div>
+        </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A corgi's head depicted as an explosion of a nebula.</div>
+              <div class="video">
+                <img src="./static/images/film/3_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/film/3_2.gif" width="100%" />
+              </div>
+            </div>
+          </div> 
+        
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Deep frying a crab on a wok in high fire.</div>
+              <div class="video">
+                <img src="./static/images/film/4_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/film/4_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>   
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">fighter practice kicking</div>
+              <div class="video">
+                <img src="./static/images/film/5_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/film/5_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A zebra taking a peaceful walk.</div>
+              <div class="video">
+                <img src="./static/images/film/6_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/film/6_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="section-title has-text-centered">
+        <h2 class="title is-4">5. AnimateDiff(RealisticVision) + VideoGuide</h2>
+      </div>
+      
+      <div id="results-carousel" class="carousel results-carousel">
+
+  
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">A koala bear playing piano in the forest.</div>
+            <div class="video">
+              <img src="./static/images/rv/1_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/rv/1_2.gif" width="100%" />
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">A car charging in the parking area.</div>
+            <div class="video">
+              <img src="./static/images/rv/2_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/rv/2_2.gif" width="100%" />
+            </div>
+          </div>
+        </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Couple salsa dancing.</div>
+              <div class="video">
+                <img src="./static/images/rv/3_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rv/3_2.gif" width="100%" />
+              </div>
+            </div>
+          </div> 
+        
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A bear wearing red jersey.</div>
+              <div class="video">
+                <img src="./static/images/rv/4_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rv/4_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>   
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">An airplane flying above the sea of clouds.</div>
+              <div class="video">
+                <img src="./static/images/rv/5_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rv/5_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A male vendor selling fruits.</div>
+              <div class="video">
+                <img src="./static/images/rv/6_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/rv/6_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+      </div>
+
+
+
+      <div class="spacer"></div>
+
+      <div class="section-title has-text-centered">
+        <h2 class="title is-4">6. LaVie + VideoGuide</h2>
+      </div>
+      
+      <div id="results-carousel" class="carousel results-carousel">
+
+  
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">A horse bending down to drink water from a river.</div>
+            <div class="video">
+              <img src="./static/images/lavie/1_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/lavie/1_2.gif" width="100%" />
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+            <div class="desc">Golden fish swimming in the ocean.</div>
+            <div class="video">
+              <img src="./static/images/lavie/2_1.gif" width="100%" />
+            </div>
+            <div class="video">
+              <img src="./static/images/lavie/2_2.gif" width="100%" />
+            </div>
+          </div>
+        </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A person playing guitar.</div>
+              <div class="video">
+                <img src="./static/images/lavie/3_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/lavie/3_2.gif" width="100%" />
+              </div>
+            </div>
+          </div> 
+        
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Kids celebrating halloween at home.</div>
+              <div class="video">
+                <img src="./static/images/lavie/4_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/lavie/4_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>   
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Removing a pineapple leaf.</div>
+              <div class="video">
+                <img src="./static/images/lavie/5_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/lavie/5_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">A space shuttle launching into orbit, with flames and smoke billowing out from the engines.</div>
+              <div class="video">
+                <img src="./static/images/lavie/6_1.gif" width="100%" />
+              </div>
+              <div class="video">
+                <img src="./static/images/lavie/6_2.gif" width="100%" />
+              </div>
+            </div>
+          </div>  
+        </div>
+
+        <p style="font-size:18px; margin-top:30px; margin-bottom:10px">As demonstrated in the samples above, our VideoGuide is the only method to reliably improve temporal quality of inadequate samples without any unwanted trade-offs. This allows for newfound synergistic effects among models: functions such as personalization can be freely utilized while borrowing the temporal consistency of external models.</p>
+    </div>
+  </section>
+
+    <div class="spacer"></div>
+
+  <section class="hero is-small">
+
+    <div class="hero-body">
+      <!-- <div class="container"> -->
+      <div class="container is-max-desktop"  style="margin-top:5px;">
+
+        <div class="section-title has-text-centered">
+          <h2 class="title is-4">7. Prior Distillation</h2>
+        </div>
+        
+        <div class="item pd-image">
+          <img src="./static/images/pd/PD.png" width="100%" />
+        </div>
+           
+        <p class="text-with-margin" style="font-size:18px;">Degraded performance due to a substandard data prior is an issue only solvable through extra training. However VideoGuide provides a workaround to this matter by enabling the utilization of a superior data prior. Generated samples are guided towards a result of better text coherence while maintaining the style of the original data domain. For each prompt, the same random seed is shared for both methods.</p>
+      
       </div>
     </div>
   </section>
-<!--End paper poster -->
 
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
 
 
   <footer class="footer">
@@ -301,6 +936,69 @@
     </div>
   </div>
 </footer>
+
+<!-- custom js file  -->
+<!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
+<script src="./static/js/bulma-carousel.min.js"></script>
+<script src="./static/js/bulma-slider.min.js"></script>
+<script src="./static/js/index.js"></script>
+<script src="./static/js/jquery.event.move.js"></script>
+<script src="./static/js/jquery.twentytwenty.js"></script>
+<script>
+$(function(){
+  $(".twentytwenty-container").twentytwenty({
+    default_offset_pct: 0.5, // How much of the before image is visible when the page loads
+    orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
+    // before_label: 'January 2017', // Set a custom before label
+    // after_label: 'March 2017', // Set a custom after label
+    // no_overlay: true, //Do not show the overlay with before and after
+    // move_slider_on_hover: true, // Move slider on mouse hover?
+    // move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement. 
+    // click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
+  });
+});
+
+$(function(){
+  $(".main-container").twentytwenty({default_offset_pct: 0.1, orientation: 'horizontal'});
+  // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
+});
+</script>
+
+<script>
+    let currentCustomIndex = 0;
+    const customSlider = document.getElementById('custom-slider');
+    const totalCustomSlides = document.querySelectorAll('.custom-slide').length;
+    const dots = document.querySelectorAll('.dot');
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.remove('active');
+            if (index === currentCustomIndex) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    function moveCustomSlide(direction) {
+        currentCustomIndex += direction;
+        if (currentCustomIndex < 0) {
+            currentCustomIndex = totalCustomSlides - 1;
+        } else if (currentCustomIndex >= totalCustomSlides) {
+            currentCustomIndex = 0;
+        }
+        customSlider.style.transform = `translateX(-${currentCustomIndex * 100}%)`;
+        updateDots();
+    }
+
+    function setCurrentSlide(index) {
+        currentCustomIndex = index;
+        customSlider.style.transform = `translateX(-${currentCustomIndex * 100}%)`;
+        updateDots();
+    }
+
+    // 초기 활성 점 업데이트
+    updateDots();
+</script>
 
 <!-- Statcounter tracking code -->
   
